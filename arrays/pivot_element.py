@@ -27,6 +27,18 @@ The pivot index is 3.
 Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
 Right sum = nums[4] + nums[5] = 5 + 6 = 11
 
+
+
+s = sum(nums)
+left = 0
+
+for i in range(len(nums)):
+   right = s - (nums[i] + left)
+   if left == right:
+       return i
+   left += nums[i]
+
+return -1
 # TLE
 
 def pivotIndex(self, nums: List[int]) -> int:
